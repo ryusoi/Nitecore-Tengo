@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nitecore Iran | Exclusive Distributor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              // Custom Palette based on requirements
+              primary: '#FDEB17', // Nitecore Yellow
+              accent: '#0097BD', // Cyan Blue
+              
+              tek: {
+                50: '#f0f9ff',
+                100: '#e0f2fe',
+                500: '#0ea5e9',
+                600: '#0284c7',
+                900: '#0c4a6e',
+                950: '#082f49',
+              },
+              nitecore: {
+                yellow: '#FDEB17', // Updated to requested primary
+                dark: '#111111',
+                gray: '#222222',
+              },
+              olight: {
+                orange: '#ff6600',
+                green: '#00ff00', 
+                black: '#1a1a1a',
+              },
+              wuben: {
+                blue: '#0055aa',
+                light: '#f0f5ff',
+              },
+              victorinox: {
+                red: '#d52b1e',
+                dark: '#8a1b14',
+              },
+              neon: '#00ff9d',
+              slate: {
+                850: '#151f32',
+                900: '#0f172a',
+                950: '#020617',
+              }
+            },
+            fontFamily: {
+              sans: ['Inter', 'Vazirmatn', 'system-ui', 'sans-serif'],
+              display: ['Inter', 'system-ui', 'sans-serif'],
+            },
+            animation: {
+              'scan': 'scan 4s linear infinite',
+              'shine': 'shine 3s linear infinite',
+              'tilt': 'tilt 10s infinite linear',
+              'spin-slow': 'spin 4s linear infinite',
+            },
+            keyframes: {
+              scan: {
+                '0%': { backgroundPosition: '200% 0' },
+                '100%': { backgroundPosition: '-200% 0' },
+              },
+              shine: {
+                '0%': { backgroundPosition: '200% center' },
+                '100%': { backgroundPosition: '-200% center' },
+              },
+              tilt: {
+                '0%, 50%, 100%': { transform: 'rotate(0deg)' },
+                '25%': { transform: 'rotate(1deg)' },
+                '75%': { transform: 'rotate(-1deg)' },
+              }
+            },
+            backgroundImage: {
+              'chrome-gradient': 'linear-gradient(180deg, #e2e8f0 0%, #94a3b8 45%, #475569 50%, #1e293b 51%, #0f172a 100%)',
+            }
+          },
+        },
+      }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f1f5f9;
+      }
+      .dark ::-webkit-scrollbar-track {
+        background: #020617;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 4px;
+        border: 1px solid #e2e8f0;
+      }
+      .dark ::-webkit-scrollbar-thumb {
+        background: #334155;
+        border: 1px solid #0f172a;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #FDEB17;
+      }
+
+      /* Shining Logo Text - High Definition Scan Line */
+      .logo-shine {
+        background: linear-gradient(
+          105deg,
+          #FDEB17 48%,    /* Start Yellow */
+          #ffffff 50%,    /* Sharp White Peak */
+          #FDEB17 52%     /* End Yellow immediately after */
+        );
+        background-size: 200% auto;
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        -webkit-text-fill-color: transparent;
+        animation: logo-scan-anim 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+        display: inline-block;
+      }
+
+      /* Light Mode Logo Variation */
+      html:not(.dark) .logo-shine {
+         background: linear-gradient(
+          105deg,
+          #000000 48%,    
+          #FDEB17 50%,    
+          #000000 52%     
+        );
+        background-size: 200% auto;
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        -webkit-text-fill-color: transparent;
+      }
+      
+      @keyframes logo-scan-anim {
+        0% { background-position: 100% 0; }
+        100% { background-position: -100% 0; }
+      }
+
+      .nitecore-yellow-bg { background-color: #FDEB17; }
+      .nitecore-yellow-text { color: #FDEB17; }
+
+      /* Dynamic Border Flow Animation */
+      @property --angle {
+        syntax: '<angle>';
+        initial-value: 0deg;
+        inherits: false;
+      }
+
+      .border-flow {
+        position: relative;
+        isolation: isolate;
+        overflow: hidden;
+      }
+      
+      .border-flow::before {
+        content: '';
+        position: absolute;
+        inset: -2px;
+        z-index: -1;
+        background: conic-gradient(from var(--angle), transparent 70%, var(--border-color));
+        animation: spin 3s linear infinite;
+        --angle: 0deg;
+      }
+
+      .border-flow::after {
+        content: '';
+        position: absolute;
+        inset: 2px;
+        z-index: -1;
+        background: inherit;
+      }
+
+      @keyframes spin {
+        from { --angle: 0deg; }
+        to { --angle: 360deg; }
+      }
+      
+      /* Fallback for browsers without @property support */
+      @supports not (background: paint(houdini)) {
+        .border-flow::before {
+           background: var(--border-color);
+           opacity: 0.5;
+           animation: none;
+        }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "vite": "https://aistudiocdn.com/vite@^7.2.4",
+    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.1",
+    "framer-motion": "https://aistudiocdn.com/framer-motion@^12.23.24",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.9.6",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "firebase/": "https://aistudiocdn.com/firebase@^12.6.0/",
+    "@supabase/supabase-js": "https://aistudiocdn.com/@supabase/supabase-js@^2.86.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-[#f8fafe] dark:bg-nitecore-dark text-slate-900 dark:text-white antialiased overflow-x-hidden selection:bg-nitecore-yellow selection:text-black transition-colors duration-300">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
